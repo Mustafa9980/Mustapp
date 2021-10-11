@@ -10,6 +10,8 @@ if (isset($_SESSION['username'])) {
 	
 	# database connection file
 	include '../dbconn.php';
+	# chick  if message is empty not sendef
+	if (isset($_SESSION['user_id']) && $_SESSION['user_id']){
 
 	# get data from XHR request and store them in var
 	$message = $_POST['message'];
@@ -65,4 +67,4 @@ if (isset($_SESSION['username'])) {
 }else {
 	header("Location: ../../index.php");
 	exit;
-}
+}}

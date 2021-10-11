@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
     include 'app/helpers/user.php';
     include 'app/helpers/conversations.php';
     include 'app/helpers/timeAgo.php';
-    // include 'app/helpers/last_chat.php';
+    include 'app/helpers/last_chat.php';
 
     # Getting User data data
     $user = getUser($_SESSION['username'], $conn);
@@ -71,7 +71,7 @@ if (isset($_SESSION['username'])) {
                                             <?= $conversation['name'] ?><br>
                                             <small>
                                                 <?php
-                                                // echo lastChat($_SESSION['user_id'], $conversation['user_id'], $conn);
+                                                echo lastChat($_SESSION['user_id'], $conversation['user_id'], $conn);
                                                 ?>
                                             </small>
                                         </h3>
